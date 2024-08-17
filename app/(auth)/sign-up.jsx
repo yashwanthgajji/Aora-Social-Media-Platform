@@ -7,6 +7,7 @@ import {images} from '../../constants'
 import FormField from '../../components/FormField'
 
 import CustomButton from '../../components/CustomButton'
+import { createUser } from '../../lib/appwrite'
 
 const SignUp = () => {
   const [form, setForm] = useState({
@@ -16,7 +17,7 @@ const SignUp = () => {
   })
   const [isSubmitting, setIsSubmittion] = useState(false)
   const submit = () => {
-
+    createUser()
   }
   return (
     <SafeAreaView className="bg-primary h-full">
@@ -48,7 +49,7 @@ const SignUp = () => {
             otherStyles="mt-7"
           />
           <CustomButton
-            title="Sign In"
+            title="Sign Up"
             handlePress={submit}
             containerStyles="mt-7"
             isLoading={isSubmitting}
